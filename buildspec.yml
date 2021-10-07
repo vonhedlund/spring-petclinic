@@ -4,6 +4,9 @@ phases:
   install:
     runtime-versions:
       java: corretto11
+    commands:
+      - echo Copying settings.xml file for Codeartifact
+      - cp ./settings.xml /root/.m2/settings.xml
   pre_build: ## New pre-build phase for authentication to ECR with Docker CLI
     commands:
       - echo Logging in to Amazon ECR...
